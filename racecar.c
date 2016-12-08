@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib>
 #include <pthread>
+#include <unistd.h>
+
+
 
 //cisc 220 assignment 6
 
