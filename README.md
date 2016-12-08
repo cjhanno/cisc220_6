@@ -27,7 +27,7 @@ void* draw(void* args)
 //infinite loop
 	//sleep 20 millisec 	5 fps
 	//clear screen
-	//draw
+	//draw  -- ** hint - use system() to draw
 //break if any car == 40 // print winner
 }
 
