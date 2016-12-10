@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib>
+#include <stdlib.h>
 #include <pthread>
 #include <unistd.h>
 #include <time.h>
@@ -40,9 +40,12 @@ void *human_car(void *human)
 	*human++;
 }
 
-void *draw(void *args) //args?
+void *draw(void *car) 
 {
 	//draw start
+	long cid;
+	cid = (long)car;
+	printf("|-> %40s\n","# Lane%ld #\n", cid);
 	int flag = 0;
 	while (flag == 0) 
 	{
