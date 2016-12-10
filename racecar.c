@@ -15,14 +15,14 @@
 
 int car1=0, car2=0, car3=0, car4=0, car5=0
 unsigned int sleep(unsigned int 0.02); // for sleep 20 millisec
-int main() 
-{
+
+
+int main() {
 
 return 0;
 }
 
-void *ai_cars(void *ai) 
-{
+void *ai_cars(void *ai) {
 	srand ((unsigned)time(NULL));
 	int flag = 0;
 	while (flag == 0) 
@@ -33,15 +33,13 @@ void *ai_cars(void *ai)
 	}
 }
 
-void *human_car(void *human)
-{
+void *human_car(void *human){
 	char c = getchar();
 	if (char == '\n')
 	*human++;
 }
 
-void *draw(void *car) 
-{
+void *draw(void *car) {
 	//draw start
 	long cid;
 	cid = (long)car;
@@ -52,11 +50,17 @@ void *draw(void *car)
 	sleep()	// sleep 20 millisec // 5 fps
 	system("clear");//clear screen
 		//draw
- 	if (*car == 40) 
-		{
+ 	if (car1 == 40 |car2 == 40 | car3 == 40 | car4 == 40 | car5 == 40) {
 		break;
-		printf("Car #%ld has won!\n", cid);
-		}
-
+		if (car1 == 40){
+			printf("You Won, Congratulations!\n"); }
+		else if (car2 == 40){
+                        printf("Car #2 Won!\n"); }
+		else if (car3 == 40){
+                        printf("Car #3 Won!\n"); }
+		else if (car4 == 40){
+                        printf("Car #4 Won!\n"); }
+		else {
+                        printf("Car #5 Won!\n"); }                
 	}
 }
