@@ -42,6 +42,7 @@ void *human_car(void *human){
 void *draw(void *car) {
 	//draw start
 	long cid;
+	int white;
 	cid = (long)car;
 	printf("|-> %40s\n","# Lane%ld #\n", cid);
 	int flag = 0;
@@ -49,7 +50,8 @@ void *draw(void *car) {
 	{
 	sleep()	// sleep 20 millisec // 5 fps
 	system("clear");//clear screen
-		//draw
+	white = (40 - *car); 
+	printf("~%d\n","|-> %s\n", *car, white);	//draw
  	if (car1 == 40 |car2 == 40 | car3 == 40 | car4 == 40 | car5 == 40) {
 		break;
 		if (car1 == 40){
