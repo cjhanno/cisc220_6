@@ -14,7 +14,7 @@
 #define NUM_THREADS 6
 
 int car1=0, car2=0, car3=0, car4=0, car5=0
-
+unsigned int sleep(unsigned int 0.02); // for sleep 20 millisec
 int main() 
 {
 
@@ -49,11 +49,14 @@ void *draw(void *car)
 	int flag = 0;
 	while (flag == 0) 
 	{
-		// sleep 20 millisec // 5 fps
-		//clear screen
+	sleep()	// sleep 20 millisec // 5 fps
+	system("clear");//clear screen
 		//draw
- 	// if any car == 40
-		//break
-		//print winner
+ 	if (*car == 40) 
+		{
+		break;
+		printf("Car #%ld has won!\n", cid);
+		}
+
 	}
 }
