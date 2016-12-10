@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <pthread>
+#include <pthread.h>
 #include <unistd.h>
 #include <time.h>
 
@@ -17,9 +17,29 @@ int car1=0, car2=0, car3=0, car4=0, car5=0
 unsigned int sleep(unsigned int 0.02); // for sleep 20 millisec
 
 
-int main() {
-
-return 0;
+int main(int argc,char *argc[]) {
+	pthread_t threads[NUM_THREADS];
+	int rc;
+	long t;
+	for (t=1; t<=NUM_THREADS; t++) {
+		if (t == 1){
+			rc = pthread_create(threads + t, NULL, human_car, (void*) t);
+		}
+		else if (t == 6){
+			rc = pthread_create(threads + t, NULL, draw, (void*) t);
+		}
+		else {
+			rc = pthread_create(threads + t, NULL, ai_cars, (void*) t);
+		}
+		if (rc) {
+			printf("ERROR;return code from pthread_create() is %d\n", rc);
+		exit(-1);
+		}
+	} 
+	for (t=1; t<= NUM_THREADS; t++){
+		pthread_join(threads[t],NULL);
+	}
+	pthread_exit(NULL);
 }
 
 void *ai_cars(void *ai) {
